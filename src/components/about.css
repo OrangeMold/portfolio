@@ -1,0 +1,10 @@
+#transition {
+    background: linear-gradient(
+  180deg,
+  #e6f0ff 0%,     /* light sky blue */
+  #fff 100%    /* soft pastel orange / peach 70 not bad either*/
+);
+min-height: 100vh;
+padding: 0;
+margin: 0;
+}

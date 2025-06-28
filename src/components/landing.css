@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+
+.mountain-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+background: linear-gradient(
+  180deg,
+  #add8e6 0%,     /* light sky blue */
+  #ffe5b4 100%    /* soft pastel orange / peach 70 not bad either*/
+);
+}
+
+.mountain-text-container {
+  position: absolute;
+  top: 25%;
+  left: 32%;
+  transform: translate(-50%, -50%);
+  color: black;
+  margin: 0;
+}
+
+#name {
+    font-family: 'Sansation', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 4.5rem;
+    margin: 0;
+}
+
+.icons {
+  display: flex;
+  gap: 10px; /* space between each icon */
+}
+
+.role-and-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* space between text and icons */
+}
+
+.icon {
+  font-size: 2rem;
+}
