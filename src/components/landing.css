@@ -15,9 +15,8 @@ background: linear-gradient(
 
 .mountain-text-container {
   position: absolute;
-  top: 25%;
-  left: 32%;
-  transform: translate(-50%, -50%);
+  top: 22%;
+  left: 18%;
   color: black;
   margin: 0;
 }
@@ -43,4 +42,55 @@ background: linear-gradient(
 
 .icon {
   font-size: 2rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+
+@media (max-width: 769px) {
+  .mountain-text-container {
+    top: 12%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 98%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .role-and-icons {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) or (max-height: 750px) {
+  .mountain-text-container {
+    top: 10%;
+  }
+  #name {
+    font-size: 3rem;
+  }
+  .title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: normal;
+  }
+}
+
+
+@media (max-height: 750px) {
+
 }

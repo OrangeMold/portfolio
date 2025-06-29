@@ -9,9 +9,7 @@ const Landing = () => {
       <div className="mountain-text-container">
         <h1 id="name">Alexandre Genest</h1>
         <div className="role-and-icons">
-          <h2 style={{ margin: 0, fontSize: "1.5rem", fontWeight: "normal" }}>
-            Student Software Engineer
-          </h2>
+          <h2 className="title">Student Software Engineer</h2>
           <div className="icons">
             <a
               href="https://github.com/OrangeMold"
