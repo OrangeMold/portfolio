@@ -90,7 +90,9 @@ background: linear-gradient(
   }
 }
 
-
-@media (max-height: 750px) {
-
+@media (min-width: 2420px) {
+  .mountain-text-container {
+    top: 12%;
+    left: 20%;
+  }
 }

@@ -20,19 +20,28 @@ const MountainSVGWrapper: React.FC<MountainSVGWrapperProps> = ({
     const updateViewBox = () => {
       const width = window.innerWidth;
 
-      // Define a gradual offset: more left-shift as screen gets narrower
-      const maxShift = 200; // max amount to shift at 320px width
-      const minWidth = 320;
-      const maxWidth = 1920;
+      if (width > 1920) {
+        // Ultrawide screen logic
+        const maxUltrawideWidth = 2200; // Your SVG's full width
+        const ultrawideWidth = Math.min(width, maxUltrawideWidth);
 
-      const clampedWidth = Math.max(minWidth, Math.min(width, maxWidth));
-      const t = 1 - (clampedWidth - minWidth) / (maxWidth - minWidth); // 0 to 1
-      const shift = Math.round(maxShift * t); // gradual shift
+        // Calculate how much extra width to show beyond 1920px
+        const extraWidth = ultrawideWidth - 1920;
+        const totalViewWidth = 1920 + extraWidth;
 
-      setViewBox(
-        //`${-shift * 0.9} ${0.2 * shift} ${1920 - shift * 0.9} ${980 - 0.2 * shift}`
-        `${-shift} 0 ${1920 - shift} 980`
-      );
+        setViewBox(`0 0 ${totalViewWidth} 980`);
+      } else {
+        // Original responsive logic for screens 1920px and below
+        const maxShift = 200; // max amount to shift at 320px width
+        const minWidth = 320;
+        const maxWidth = 1920;
+
+        const clampedWidth = Math.max(minWidth, Math.min(width, maxWidth));
+        const t = 1 - (clampedWidth - minWidth) / (maxWidth - minWidth); // 0 to 1
+        const shift = Math.round(maxShift * t); // gradual shift
+
+        setViewBox(`${-shift} 0 ${1920 - shift} 980`);
+      }
     };
 
     updateViewBox();
