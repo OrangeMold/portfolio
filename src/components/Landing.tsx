@@ -1,11 +1,17 @@
 import MountainScene from "./Mountains/MountainScene";
 import "./landing.css";
 import { SiGithub, SiLinkedin, SiDevpost } from "react-icons/si";
+import { FiSun } from "react-icons/fi";
+import { useState } from "react";
 
 const Landing = () => {
+  const [isDay, setIsDay] = useState(true);
   return (
-    <div className="mountain-container">
-      <MountainScene />
+    <div
+      className={`mountain-container ${isDay ? "day-theme" : "night-theme"}`}
+    >
+      <FiSun className="sun-icon" onClick={() => setIsDay(!isDay)} />
+      <MountainScene isDay={isDay} />
       <div className="mountain-text-container">
         <h1 id="name">Alexandre Genest</h1>
         <div className="role-and-icons">

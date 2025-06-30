@@ -6,11 +6,6 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-background: linear-gradient(
-  180deg,
-  #add8e6 0%,     /* light sky blue */
-  #ffe5b4 100%    /* soft pastel orange / peach 70 not bad either*/
-);
 }
 
 .mountain-text-container {
@@ -32,6 +27,7 @@ background: linear-gradient(
 .icons {
   display: flex;
   gap: 10px; /* space between each icon */
+  color: white;
 }
 
 .role-and-icons {
@@ -44,10 +40,52 @@ background: linear-gradient(
   font-size: 2rem;
 }
 
+.night-theme .icon {
+  color: white;
+}
+
+.night-theme .sun-icon {
+  color: white;
+}
+
 .title {
   margin: 0;
   font-size: 1.5rem;
   font-weight: normal;
+}
+
+.sun-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 2.5rem;
+  z-index: 10;
+}
+
+.day-theme {
+  background: linear-gradient(
+  180deg,
+  #add8e6 0%,     /* light sky blue */
+  #ffe5b4 100%    /* soft pastel orange / peach 70 not bad either*/
+);
+}
+
+.night-theme {
+  background: linear-gradient(
+    180deg,
+    #663fc2 0%,     /* deep navy */
+    #d682cf 80%,    /* twilight blue */
+    #781fcc,
+    #582dbd
+  );
+}
+
+.day-theme .mountain-text-container {
+  color: black;
+}
+
+.night-theme .mountain-text-container {
+  color: white;
 }
 
 

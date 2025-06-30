@@ -2,11 +2,11 @@ import BackgroundMountains from "./BackgroundMountains";
 import MidgroundMountains from "./MidgroundMountains";
 import "./mountains.css";
 
-const MountainScene = () => {
+const MountainScene = ({ isDay }: { isDay: boolean }) => {
   return (
     <div id="mountainScene">
-      <BackgroundMountains />
-      <MidgroundMountains />
+      <BackgroundMountains isDay={isDay} />
+      <MidgroundMountains isDay={isDay} />
     </div>
   );
 };
