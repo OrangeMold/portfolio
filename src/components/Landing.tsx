@@ -6,11 +6,25 @@ import { useState } from "react";
 
 const Landing = () => {
   const [isDay, setIsDay] = useState(true);
+  const [spinning, setSpinning] = useState(false);
+
+  const handleClick = () => {
+    setIsDay((prev) => !prev);
+    setSpinning(true);
+    setTimeout(() => setSpinning(false), 600); // match duration
+  };
+
+  const spinClass = spinning
+    ? isDay
+      ? "spin-reverse-animation"
+      : "spin-animation"
+    : "";
+
   return (
     <div
       className={`mountain-container ${isDay ? "day-theme" : "night-theme"}`}
     >
-      <FiSun className="sun-icon" onClick={() => setIsDay(!isDay)} />
+      <FiSun className={`sun-icon ${spinClass}`} onClick={handleClick} />
       <MountainScene isDay={isDay} />
       <div className="mountain-text-container">
         <h1 id="name">Alexandre Genest</h1>
