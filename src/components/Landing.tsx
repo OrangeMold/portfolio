@@ -2,11 +2,18 @@ import MountainScene from "./Mountains/MountainScene";
 import "./landing.css";
 import { SiGithub, SiLinkedin, SiDevpost } from "react-icons/si";
 import { FiSun } from "react-icons/fi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Landing = () => {
   const [isDay, setIsDay] = useState(true);
   const [spinning, setSpinning] = useState(false);
+
+  useEffect(() => {
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    setIsDay(!prefersDark);
+  }, []);
 
   const handleClick = () => {
     setIsDay((prev) => !prev);
@@ -29,7 +36,7 @@ const Landing = () => {
       <div className="mountain-text-container">
         <h1 id="name">Alexandre Genest</h1>
         <div className="role-and-icons">
-          <h2 className="title">Student Software Engineer</h2>
+          <h2 className="title">Software Engineer</h2>
           <div className="icons">
             <a
               href="https://github.com/OrangeMold"
